@@ -10,7 +10,7 @@ describe("Login Application", () => {
     expect(userName).toBeInTheDocument();
   });
 
-  // Password
+  // Testing Password
 
   test("Testing for Password input", () => {
     const { getByPlaceholderText } = render(<App />);
