@@ -1,5 +1,5 @@
 import App from "../App";
-import { screen, render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 // 1=>  Rendering the component
@@ -111,7 +111,8 @@ describe("Testing the Login Application !", () => {
 
     const confirmPasswordError = queryByText(/the Password dont match again !/);
 
-    userEvent.type(confirmPasswordElement, "123");
+    const confirmPassword = getByLabelText(/confirmpassword/i);
+    userEvent.type(confirmPassword, "123");
     const BtnElement = getByRole("button", {
       name: /submit/i,
     });
